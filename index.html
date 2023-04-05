@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BCI REVENGE</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+    <header>
+        <h1>Bci Revenge</h1>
+    </header>
+    <div id="game">
+        <iframe id="gameframe" src="./game.html" frameborder="0"></iframe>
+        <br>
+    </div>
+    <script>
+        function fullscrn() {
+            var iframe = document.getElementById("gameframe");
+            var fullscreen = document.getElementById("game");
+
+            if (!document.fullscreenElement) {
+                iframe.requestFullscreen().catch(err => {
+                    alert(`Error al entrar en modo fullscreen: ${err.message}`);
+                });
+                fullscreen.style.width = "100%";
+                fullscreen.style.height = "100%";
+            } else {
+                document.exitFullscreen();
+                fullscreen.style.width = "";
+                fullscreen.style.height = "";
+            }
+        }
+    </script>
+    <center><button onclick="fullscrn()">FULLSCREEN</button></center>
+    
+    <div id="content">
+        <p>BCI ha perdido las riendas, ¿podra un simple ingeniero de datos, poder solucionarlo?</p>
+        <br>
+    </div>
+    <div>
+        <p>A,D para moverte</p>
+    </div>
+    <div>
+        <p>W o BARRA ESPACIADORA para saltar</p>
+    </div>
+</body>
+</html>
